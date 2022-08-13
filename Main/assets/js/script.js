@@ -43,3 +43,19 @@ const options6 = ["1. quotes", "2. curly braces", "3. parenthesis", "4. square b
 const question6 = new Question("What syntax wraps aroun strings?", options6, "1. quotes");
 questionList.push(question6);
 
+//function for question loops
+let optionList = [];
+let currentQues = 0;
+let score = 0;
+let timeLeft = 61;
+let isQuizOngoing = false;
+let leaderboard = [];
+let initials = "";
+let isClearingAnswer = false;
+let clearingAnswerCode = 0;
+let isCorrect = false;
+
+function init() {
+    start.addEventListener("click", questionLoop);
+    scores.addEventListener("click", showScores);
+}
