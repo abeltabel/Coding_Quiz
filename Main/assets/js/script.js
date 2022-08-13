@@ -59,3 +59,32 @@ function init() {
     start.addEventListener("click", questionLoop);
     scores.addEventListener("click", showScores);
 }
+
+//Creates option buttons 
+function questionLoop () {
+    runTimer();
+    isQuizOngoing = true;
+    start.setAttribute("style", "display: none");
+    content.setAttribute("style", "display: none");
+    let numOfOptions = questionList[0].options.length;
+    for(let i = 0; i < numOfOptions; i++) {
+        let option = document.createElement("button");
+        container.appendChild(option);
+        option.setAttribute("id", 'button${i + 1}');
+    }
+    nextQuestion();
+}
+
+//Counts down the timer and ends the quiz if/when the timer hits zero
+function runTimer () {
+    let clock = setInterval(funtion() {
+        timeLeft--;
+        timer.textContent = 'Time: ${timeLeft} seconds';
+        if(timeLeft === 0) {
+            clearInterval(clock);
+            if(title.textContent !== "All Done.") {
+                endOfQuiz();
+            }
+        }
+    }, 1000)
+}
