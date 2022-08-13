@@ -31,3 +31,15 @@ const options3 = ["1. body", "2. canvas", "3. concept", "4. aside"];
 const question3 = new Question("What prameters can be passed into the query selector function?", options3, "2. css selectors");
 questionList.push(question3);
 
+const options4 = ["1. body", "2. canvas", "3. concept", "4. aside"];
+const question4 = new Question("Which of the following is not an HTML tag?", options4, "3. concept");
+questionList.push(question4);
+
+const option5 = ["1. add()", "2. push()", "3. concat()", "4. non of the above"];
+const question5 = new Question("Which of the following functions can add an element to the end of an array? ", options5, "2. push()");
+questionList.push(question5);
+
+const options6 = ["1. quotes", "2. curly braces", "3. parenthesis", "4. square braces"];
+const question6 = new Question("What syntax wraps aroun strings?", options6, "1. quotes");
+questionList.push(question6);
+
