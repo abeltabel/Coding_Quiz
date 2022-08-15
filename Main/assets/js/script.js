@@ -77,7 +77,7 @@ function questionLoop () {
 
 //Counts down the timer and ends the quiz if/when the timer hits zero
 function runTimer () {
-    let clock = setInterval(funtion() {
+    let clock = setInterval(function() {
         timeLeft--;
         timer.textContent = 'Time: ${timeLeft} seconds';
         if(timeLeft === 0) {
@@ -88,3 +88,15 @@ function runTimer () {
         }
     }, 1000)
 }
+
+//Check if you are on the last question
+//Goes to the next question or ends the quiz 
+function nextQuestion(event) {
+    writeAnswer(event);
+    if(currentQues < questionList.length) {
+        changeQuestion();
+    } else {
+        endOfQuiz();
+    }
+}
+
